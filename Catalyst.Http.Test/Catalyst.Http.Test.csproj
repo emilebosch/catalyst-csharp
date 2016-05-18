@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{59225D16-45D2-4B4D-9355-6117813999D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Catalyst.Http.Test</RootNamespace>
+    <AssemblyName>Catalyst.Http.Test</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="SgmlReaderDll">
+      <HintPath>..\Vendor\SgmlReaderDll.dll</HintPath>
+    </Reference>
+    <Reference Include="XCSS3SE">
+      <HintPath>..\Vendor\XCSS3SE.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="WebDriverExtensions.cs" />
+    <Compile Include="WebDriver.cs" />
+    <Compile Include="XmlElementExtensions.cs" />
+    <Compile Include="WebBrowser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Catalyst.Http\Catalyst.Http.csproj">
+      <Project>{86F9626C-1481-4E10-AC73-7CA485CEC903}</Project>
+      <Name>Catalyst.Http</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

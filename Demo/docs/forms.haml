@@ -1,0 +1,51 @@
+%h1 Forms
+%p 
+	Forms are a big part of every application therefore we have integrated multi-level forms in this
+	application
+
+	Forms are responsible for rendering entity data onto a browser or mobile device.
+
+	There are different types of forms, for instance, section forms, plained forms.  
+
+%h1 Custom forms
+%p
+	Custom forms are for instance section form, lazy forms or autoform.
+	
+	%h2 Custom form renders
+	
+	%h3 For the web
+	%b TODO
+		
+	%h3 For mobile devices (android/iphone/windows)
+	%b TODO
+
+%h1 Custom fields
+%p
+	54hrs allows for functional field types, or composite field types. Basically these
+	are types that can be more than just a single value, and are a closed unit. For instance: Address, which
+	consists out of a street, number, postalcode, country, and maybe even coordinates.
+
+	To create your own custom field type you need to implement the following things:
+	
+	%ul
+		%li Create a field
+		%li Create a field value	
+		%li Create a field entity getter & setter
+		%li Create a field hash getter & setter
+		
+	And then on the client side:
+	
+	%ul	
+		%li Creating a field renderer
+
+	%h2 Custom field renderers
+	
+	%h3 For the web
+	%p
+		For the web, you need to add your field renderer to the http field renderer, 
+		which renders your field.
+
+	%h3 For mobile devices (android/iphone/windows)
+	%p
+		For the web, you need to implement your field renderer depending on the target platform. The idea however
+		is the same.

@@ -1,0 +1,37 @@
+body 
+{ 
+	font-family:georgia;font-size:10pt; color:#0a0a0a;
+}
+
+h1 { 
+	color:#a0a0a;
+}
+
+pre {
+	border:1px solid #a0a0a0; 
+	background-color:#efefef;
+	padding:10px;
+	margin:10px;
+	font-family:courier;
+}	
+
+.nav 
+{
+	background-color:#efefef;
+	border:1px solid #a0a0a0;
+	width:200px;
+}
+
+.doc
+{
+	margin-top:10px;
+}
+
+.nav a 
+{
+	color:#a0a0a0;
+}
+
+p {
+	margin-left:10px;
+}

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{14A0270E-2B64-4116-BC57-98B0DC981962}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Demo</RootNamespace>
+    <AssemblyName>Demo</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Mono.Posix" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="middleware\AutoDoc.cs" />
+    <Compile Include="apps\BlogApp.cs" />
+    <Compile Include="apps\AdminApp.cs" />
+    <Compile Include="lib\Helper.cs" />
+    <Compile Include="db\Sqlite.cs" />
+    <Compile Include="apps\Worklog.cs" />
+    <Compile Include="features\AdminFeature.cs" />
+    <Compile Include="features\WorklogFeature.cs" />
+    <Compile Include="statemachines\Register.cs" />
+    <Compile Include="DemoApp.cs" />
+    <Compile Include="db\DemoDb.cs" />
+    <Compile Include="apps\StateApp.cs" />
+    <Compile Include="apps\AttachmentsApp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="views\index.haml">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </None>
+    <None Include="views\new.haml">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </None>
+    <None Include="app.config" />
+    <None Include="views\admin\index.haml">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </None>
+    <None Include="public\doc.css">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </None>
+    <None Include="docs\index.haml">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </None>
+    <None Include="docs\forms.haml">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </None>
+    <None Include="docs\bus.haml">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </None>
+    <None Include="docs\documentation.haml">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </None>
+    <None Include="views\state\test.haml">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </None>
+    <None Include="views\state\test2.haml">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </None>
+    <None Include="public\bla.html">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </None>
+    <None Include="public\test.css">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="public\lol.png">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Catalyst.App\Catalyst.App.csproj">
+      <Project>{28EDAEEA-ABB9-4629-A601-F0329A5B9660}</Project>
+      <Name>Catalyst.App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Catalyst.Http\Catalyst.Http.csproj">
+      <Project>{86F9626C-1481-4E10-AC73-7CA485CEC903}</Project>
+      <Name>Catalyst.Http</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Catalyst.Tilt\Catalyst.Tilt.csproj">
+      <Project>{B9284586-7F5C-4CF2-AF38-EE50BFC99ED9}</Project>
+      <Name>Catalyst.Tilt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Catalyst.Http.Test\Catalyst.Http.Test.csproj">
+      <Project>{59225D16-45D2-4B4D-9355-6117813999D8}</Project>
+      <Name>Catalyst.Http.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Catalyst\Catalyst.csproj">
+      <Project>{A0FB50B7-58B4-4D08-A093-752D519850DB}</Project>
+      <Name>Catalyst</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="db\" />
+    <Folder Include="middleware\" />
+    <Folder Include="apps\" />
+    <Folder Include="lib\" />
+    <Folder Include="views\admin\" />
+    <Folder Include="features\" />
+    <Folder Include="statemachines\" />
+    <Folder Include="views\state\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

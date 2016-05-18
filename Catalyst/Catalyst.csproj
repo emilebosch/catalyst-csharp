@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A0FB50B7-58B4-4D08-A093-752D519850DB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Catalyst2</RootNamespace>
+    <AssemblyName>Catalyst</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Args">
+      <HintPath>..\Vendor\Args.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Vendor\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="Environment.cs" />
+    <Compile Include="Form\FieldRenderer.cs" />
+    <Compile Include="Form\Form.cs" />
+    <Compile Include="Helpers\Flash.cs" />
+    <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Scheduler\Scheduler.cs" />
+    <Compile Include="Validation\Validator.cs" />
+    <Compile Include="Tasks\Tasks.cs" />
+    <Compile Include="Testing\Feature.cs" />
+    <Compile Include="Form\FormRenderer.cs" />
+    <Compile Include="Form\SectionForm.cs" />
+    <Compile Include="Json\Json.cs" />
+    <Compile Include="Metadata\Fields.cs" />
+    <Compile Include="Metadata\SimpleHash.cs" />
+    <Compile Include="Metadata\Metadata.cs" />
+    <Compile Include="StateFlow\StateFlow.cs" />
+    <Compile Include="Helpers\Tag.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Testing\" />
+    <Folder Include="Json\" />
+    <Folder Include="Metadata\" />
+    <Folder Include="StateFlow\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Catalyst.App\Catalyst.App.csproj">
+      <Project>{28EDAEEA-ABB9-4629-A601-F0329A5B9660}</Project>
+      <Name>Catalyst.App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Catalyst.Http\Catalyst.Http.csproj">
+      <Project>{86F9626C-1481-4E10-AC73-7CA485CEC903}</Project>
+      <Name>Catalyst.Http</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Catalyst.Http.Test\Catalyst.Http.Test.csproj">
+      <Project>{59225D16-45D2-4B4D-9355-6117813999D8}</Project>
+      <Name>Catalyst.Http.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Catalyst.Tilt\Catalyst.Tilt.csproj">
+      <Project>{B9284586-7F5C-4CF2-AF38-EE50BFC99ED9}</Project>
+      <Name>Catalyst.Tilt</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

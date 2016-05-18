@@ -1,0 +1,8 @@
+%html
+	%form{action=Model.UrlFor("/create") enctype="multipart/form-data" method="post"}
+		%label{for="X"} Post name
+		%input{type="text" id="X" name="post[name]"}
+		%input{type="text" id="asd" name="asd[lol]"}
+		%input{type="file" name="lol"}  
+		%input{type="file" name="ok"}    
+		%input{type="submit" value="Create this post"}

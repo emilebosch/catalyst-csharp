@@ -1,0 +1,13 @@
+@posts/edit.html
+<html>
+	<b>Whaah
+</html>
+
+@post/index.haml
+<html>
+
+</html>
+
+@post/done.md
+<ok>
+</ok>

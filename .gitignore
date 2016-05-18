@@ -1,0 +1,13 @@
+*.DS_Store
+*.user
+*/bin/debug/*
+*/bin/release/*
+*.suo
+*/*.DS_Store
+*.mdb
+*.pdb
+*/obj/*
+*.cache
+*.suo
+*.userprefs
+bin

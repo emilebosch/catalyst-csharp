@@ -1,0 +1,29 @@
+%html
+	%link{rel="stylesheet" type="text/css" href="/public/test.css"}	
+	%h1 Parent child forms
+	.comment	
+		So parent, child forms are super easy using 54hrs.
+		All we need to do is define a form using our form dsl on our entity and be awesome instead. =)k
+	
+	%form {action="/admin" method="post"}
+		- var projectform = new Form(Model, "project");
+		= projectform.Render()
+		 
+	    %h2 Tasks  
+	    .comment
+	    	This is a child form
+	    - var i=0; 
+	 	- foreach(var task in Model.Tasks)
+	 		- var taskform = projectform.ChildForm(task, "tasks", index: i++)
+	 		= taskform.Render()	 		
+	 		
+	 		%h3 Subtasks
+	 		.comment
+	 			this is another form in form
+	 		- var j=0;
+		 	- foreach(var subtask in task.SubTasks)
+		 		- var subtaskform = taskform.ChildForm(subtask, "subtasks", index: j++)
+		 		= subtaskform.Render()
+		 		
+	 	%div.buttons
+	 		%input {type="submit"}

@@ -1,0 +1,6 @@
+%html
+	%h1 Hello simple MONO running on herku
+	%a { href=Model.UrlFor("/new")} Add a blog entry!
+	%ul 
+	- foreach(var post in Model.Model)
+		%li=Model.Link(Model.UrlFor("/view/{0}", post.Name), post.Name)	

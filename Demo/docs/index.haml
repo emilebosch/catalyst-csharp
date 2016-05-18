@@ -1,0 +1,77 @@
+﻿%h1 54hrs
+
+%h2 Framework todo
+
+%ul
+	%li Make better model framework
+	%li Allow for email
+
+%h2 Rapid development framework
+
+Framework for rapid development for mono and defacto deployment on heroku
+it uses the concepts out of the ruby world and but then badly implemented. It's not
+done but it uses concepts and pragmatism which is seriously needed in the .NET world.
+
+%b Some things that have been clones:
+
+%ul
+	%li Rack (Catalyst.Http)
+	%li Sinatra (Catalyst.App)
+	%li Tilt (Catalyst.Tilt)
+	%li Rake
+	%li Simpleform (Catalsyt2/Forms)
+	%li Cucmber RSPECY /BDD'ish (I invented myself)
+	
+%h2 Installing
+
+%pre
+ git clone http://github.com/54hrs/catalyst
+ cs catalyst
+ herokufy.sh
+%h3 Testing	
+
+Functional testing comes out of the box. Its 
+
+%pre
+ careless /feature:lol
+%h2 Philosophy and things that are generally important!
+
+%p
+	If you use this framework, you should feel relieved. It should make you happy, it should
+	make u work less, give you more space to be creative. If this is not the case,
+	write down 
+
+%p
+	Everything needs to be ELEGANT and a PLEASURE to use and INTUITIVE.
+	You need to look at the ruby devs to understand how to build pragmatic, easy and fun 
+	to use code that just works.
+
+%pre
+ this.Request.SomeFactory.GetData();
+do
+%pre 
+ Request.GetData	
+%h2 ZOMG BUT WHY?
+
+Cause .net development equals slow deployment cycles, patterns just for writing patterns
+and lame arguments about which ioc pattern injector we now need. Time for some opensource ruby
+freshness on the .net platform.
+
+%h2 Deployable on heroku
+
+Ok, rapid development equals rapid awesomeness, equals deploy now.
+
+%h2 What needs to be done?
+
+%h3 SQLite.cs -> PostgresQL
+
+SQLite.cs needs to be ported to Postgresql on mono. The library is small, tiny and sexy.
+We needs it.
+
+%h3 NHAML => NSLIM 
+
+Less typing means faster development, please help us port SLIM to the MONO platform?
+
+%h2 I think i found a boog!
+
+Awesome! Please press clicky here to contribute!

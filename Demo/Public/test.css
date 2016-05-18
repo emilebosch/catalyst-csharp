@@ -1,0 +1,16 @@
+body 
+{
+	font-family:sans-serif;
+	font-size:9pt;
+}
+
+.error 
+{
+	border:5px solid red;
+}
+
+label 
+{
+	padding:3px;
+	color:#666;
+}
